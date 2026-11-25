@@ -1,0 +1,237 @@
+{
+ "id": "m01",
+ "number": 1,
+ "title": "Getting Started with Python",
+ "summary": "Write and run your first programs with print().",
+ "lessons": [
+  {
+   "id": "m01-l1",
+   "title": "Your First Program",
+   "exercises": [
+    {
+     "id": "m01-l1-e1",
+     "title": "Hello, World!",
+     "prompt": "Print exactly: `Hello, World!`",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use the print() function.",
+      "Put the text inside quotes."
+     ],
+     "solution": "print(\"Hello, World!\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Hello, World!\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l1-e2",
+     "title": "Three Lines",
+     "prompt": "Print three lines, one per `print` call:\n```\nHello\nRP Code Academy\nLet's code!\n```",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Call print() three times.",
+      "Use double quotes around Let's code!"
+     ],
+     "solution": "print(\"Hello\")\nprint(\"RP Code Academy\")\nprint(\"Let's code!\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Hello\nRP Code Academy\nLet's code!\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l1-e3",
+     "title": "Your Favourite Subject",
+     "prompt": "Print exactly: `I love Python`",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "One print call is enough."
+     ],
+     "solution": "print(\"I love Python\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "I love Python\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m01-l2",
+   "title": "Comments and Errors",
+   "exercises": [
+    {
+     "id": "m01-l2-e1",
+     "title": "Fix the Bug",
+     "prompt": "This program has a bug. Fix it so it prints `Fixed!`",
+     "starter": "print(\"Fixed!)\n",
+     "hints": [
+      "Look at the quotes.",
+      "A string needs both an opening and a closing quote."
+     ],
+     "solution": "print(\"Fixed!\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Fixed!\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l2-e2",
+     "title": "Leave a Note",
+     "prompt": "Add a comment line, then print `Comments are ignored`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Start the comment line with #.",
+      "Then add the print line."
+     ],
+     "solution": "# This is my comment\nprint(\"Comments are ignored\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Comments are ignored\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l2-e3",
+     "title": "Quotes Inside Quotes",
+     "prompt": "Print exactly: `She said \"Hi\"`",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Wrap the whole text in single quotes.",
+      "Or use a backslash before inner double quotes."
+     ],
+     "solution": "print('She said \"Hi\"')\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "She said \"Hi\"\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m01-l3",
+   "title": "More print() Tricks",
+   "exercises": [
+    {
+     "id": "m01-l3-e1",
+     "title": "Many Values",
+     "prompt": "Using ONE print call with three values, print `Python is great`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Separate values with commas."
+     ],
+     "solution": "print(\"Python\", \"is\", \"great\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Python is great\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l3-e2",
+     "title": "Custom Separator",
+     "prompt": "Print the date `2026-12-25` using `print(2026, 12, 25, ...)` and `sep`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Add sep=\"-\" inside the brackets."
+     ],
+     "solution": "print(2026, 12, 25, sep=\"-\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "2026-12-25\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l3-e3",
+     "title": "No New Line",
+     "prompt": "Print `Loading...` on ONE line using four print calls: `Loading`, `.`, `.`, `.`. Use `end=\"\"` so the output stays on the same line.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use end=\"\" on the first three prints."
+     ],
+     "solution": "print(\"Loading\", end=\"\")\nprint(\".\", end=\"\")\nprint(\".\", end=\"\")\nprint(\".\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Loading...\n"
+      }
+     ]
+    },
+    {
+     "id": "m01-l3-e4",
+     "title": "Blank Line",
+     "prompt": "Print `Top`, then an empty line, then `Bottom`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "print() with nothing inside gives an empty line."
+     ],
+     "solution": "print(\"Top\")\nprint()\nprint(\"Bottom\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Top\n\nBottom\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which function shows text on the screen?",
+   "options": [
+    "show()",
+    "print()",
+    "echo()",
+    "display()"
+   ],
+   "answer": 1,
+   "explanation": "print() displays values."
+  },
+  {
+   "question": "What does a # at the start of a line do?",
+   "options": [
+    "Prints a number",
+    "Makes a comment",
+    "Stops the program",
+    "Imports a module"
+   ],
+   "answer": 1,
+   "explanation": "Python ignores comments."
+  },
+  {
+   "question": "What is the output of print('a', 'b', sep='-')?",
+   "options": [
+    "a b",
+    "ab",
+    "a-b",
+    "a,b"
+   ],
+   "answer": 2,
+   "explanation": "sep replaces the space between values."
+  },
+  {
+   "question": "Which line causes a SyntaxError?",
+   "options": [
+    "print('hi')",
+    "print(\"hi\")",
+    "print('hi)",
+    "print(1)"
+   ],
+   "answer": 2,
+   "explanation": "The string is never closed."
+  }
+ ]
+}

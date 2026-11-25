@@ -1,0 +1,232 @@
+{
+ "id": "m12",
+ "number": 12,
+ "title": "Modules and the Standard Library",
+ "summary": "Import tools that Python already ships with.",
+ "lessons": [
+  {
+   "id": "m12-l1",
+   "title": "Importing Modules",
+   "exercises": [
+    {
+     "id": "m12-l1-e1",
+     "title": "Floor and Ceiling",
+     "prompt": "Print `math.floor(7.8)` and then `math.ceil(7.2)` on separate lines.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "import math first."
+     ],
+     "solution": "import math\nprint(math.floor(7.8))\nprint(math.ceil(7.2))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "7\n8\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l1-e2",
+     "title": "Factorial",
+     "prompt": "Use the math module to print 5 factorial.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "math.factorial()"
+     ],
+     "solution": "import math\nprint(math.factorial(5))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "120\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l1-e3",
+     "title": "GCD",
+     "prompt": "Print the greatest common divisor of 48 and 18.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "math.gcd()"
+     ],
+     "solution": "import math\nprint(math.gcd(48, 18))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "6\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m12-l2",
+   "title": "statistics and random",
+   "exercises": [
+    {
+     "id": "m12-l2-e1",
+     "title": "Mean",
+     "prompt": "Print the mean of `[2, 4, 6, 8]`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "statistics.mean()"
+     ],
+     "solution": "import statistics\nprint(statistics.mean([2, 4, 6, 8]))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "5\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l2-e2",
+     "title": "Median",
+     "prompt": "Print the median of `[7, 1, 5, 3, 9]`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "statistics.median()"
+     ],
+     "solution": "import statistics\nprint(statistics.median([7, 1, 5, 3, 9]))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "5\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l2-e3",
+     "title": "Dice Check",
+     "prompt": "Roll a dice with `random.randint(1, 6)` and print `True` if the result is between 1 and 6 (it always should be).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Store the roll, then test it."
+     ],
+     "solution": "import random\nroll = random.randint(1, 6)\nprint(1 <= roll <= 6)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "True\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m12-l3",
+   "title": "datetime, collections and More",
+   "exercises": [
+    {
+     "id": "m12-l3-e1",
+     "title": "Weekday",
+     "prompt": "Print the weekday name of 18 November 2026 (use `datetime.date` and `strftime(\"%A\")`).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "strftime(\"%A\") gives the day name."
+     ],
+     "solution": "import datetime\nprint(datetime.date(2026, 11, 18).strftime(\"%A\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Wednesday\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l3-e2",
+     "title": "Most Common",
+     "prompt": "Print `Counter(\"banana\").most_common(1)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "from collections import Counter"
+     ],
+     "solution": "from collections import Counter\nprint(Counter(\"banana\").most_common(1))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[('a', 3)]\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l3-e3",
+     "title": "Alphabet",
+     "prompt": "Print the first five upper-case letters using the `string` module: `ABCDE`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Slice string.ascii_uppercase."
+     ],
+     "solution": "import string\nprint(string.ascii_uppercase[:5])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "ABCDE\n"
+      }
+     ]
+    },
+    {
+     "id": "m12-l3-e4",
+     "title": "To JSON",
+     "prompt": "Print `json.dumps({\"a\": 1, \"b\": [1, 2]})`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "import json"
+     ],
+     "solution": "import json\nprint(json.dumps({\"a\": 1, \"b\": [1, 2]}))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{\"a\": 1, \"b\": [1, 2]}\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What does 'import math' do?",
+   "options": [
+    "Runs a calculator",
+    "Makes math functions available",
+    "Installs Python",
+    "Deletes variables"
+   ],
+   "answer": 1,
+   "explanation": "It loads the module."
+  },
+  {
+   "question": "What is math.ceil(7.2)?",
+   "options": [
+    "7",
+    "8",
+    "7.2",
+    "7.5"
+   ],
+   "answer": 1,
+   "explanation": "ceil rounds up."
+  },
+  {
+   "question": "Why can't tests check an exact random number?",
+   "options": [
+    "Random is slow",
+    "It changes every run",
+    "It is always 0",
+    "It is an error"
+   ],
+   "answer": 1,
+   "explanation": "Random values differ each run."
+  },
+  {
+   "question": "Which module computes a mean?",
+   "options": [
+    "math",
+    "statistics",
+    "random",
+    "string"
+   ],
+   "answer": 1,
+   "explanation": "statistics.mean()."
+  }
+ ]
+}

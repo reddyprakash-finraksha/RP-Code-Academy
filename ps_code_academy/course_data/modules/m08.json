@@ -1,0 +1,240 @@
+{
+ "id": "m08",
+ "number": 8,
+ "title": "Lists",
+ "summary": "Store collections of items and process them.",
+ "lessons": [
+  {
+   "id": "m08-l1",
+   "title": "List Basics",
+   "exercises": [
+    {
+     "id": "m08-l1-e1",
+     "title": "Second Item",
+     "prompt": "For `fruits = [\"apple\", \"banana\", \"cherry\"]` print the second item, then the length of the list on the next line.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Index 1 is the second item."
+     ],
+     "solution": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[1])\nprint(len(fruits))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "banana\n3\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l1-e2",
+     "title": "Append",
+     "prompt": "Start with `nums = [1, 2, 3]`, append `4`, and print the list.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".append()"
+     ],
+     "solution": "nums = [1, 2, 3]\nnums.append(4)\nprint(nums)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[1, 2, 3, 4]\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l1-e3",
+     "title": "Remove",
+     "prompt": "Start with `letters = [\"a\", \"b\", \"c\"]`, remove `\"b\"`, and print the list.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".remove(value)"
+     ],
+     "solution": "letters = [\"a\", \"b\", \"c\"]\nletters.remove(\"b\")\nprint(letters)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "['a', 'c']\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m08-l2",
+   "title": "Looping and Slicing Lists",
+   "exercises": [
+    {
+     "id": "m08-l2-e1",
+     "title": "Sum with a Loop",
+     "prompt": "For `nums = [4, 8, 15, 16, 23, 42]` use a for loop to print the sum.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Start total at 0."
+     ],
+     "solution": "nums = [4, 8, 15, 16, 23, 42]\ntotal = 0\nfor n in nums:\n    total += n\nprint(total)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "108\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l2-e2",
+     "title": "First Three",
+     "prompt": "For `nums = [10, 20, 30, 40, 50]` print the first three items as a list.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Slice with [:3]."
+     ],
+     "solution": "nums = [10, 20, 30, 40, 50]\nprint(nums[:3])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[10, 20, 30]\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l2-e3",
+     "title": "Backwards",
+     "prompt": "For `items = [\"x\", \"y\", \"z\"]` print each item on its own line in reverse order.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Loop over items[::-1]."
+     ],
+     "solution": "items = [\"x\", \"y\", \"z\"]\nfor item in items[::-1]:\n    print(item)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "z\ny\nx\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m08-l3",
+   "title": "List Methods and Comprehensions",
+   "exercises": [
+    {
+     "id": "m08-l3-e1",
+     "title": "Sort",
+     "prompt": "Sort `[5, 2, 9, 1]` ascending and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".sort()"
+     ],
+     "solution": "nums = [5, 2, 9, 1]\nnums.sort()\nprint(nums)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[1, 2, 5, 9]\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l3-e2",
+     "title": "Squares",
+     "prompt": "Use a list comprehension to print the squares of 1 to 5 as a list.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "[n * n for n in range(1, 6)]"
+     ],
+     "solution": "print([n * n for n in range(1, 6)])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[1, 4, 9, 16, 25]\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l3-e3",
+     "title": "Filter Evens",
+     "prompt": "Use a list comprehension to print the even numbers from 1 to 10 as a list.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Add if n % 2 == 0 at the end."
+     ],
+     "solution": "print([n for n in range(1, 11) if n % 2 == 0])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[2, 4, 6, 8, 10]\n"
+      }
+     ]
+    },
+    {
+     "id": "m08-l3-e4",
+     "title": "Max and Min",
+     "prompt": "Read one line of space-separated integers. Print the largest and smallest separated by a space.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "input().split() gives a list of strings."
+     ],
+     "solution": "nums = [int(x) for x in input().split()]\nprint(max(nums), min(nums))\n",
+     "tests": [
+      {
+       "input": "3 9 1 7\n",
+       "expected": "9 1\n"
+      },
+      {
+       "input": "5\n",
+       "expected": "5 5\n"
+      },
+      {
+       "input": "-4 -9 0\n",
+       "expected": "0 -9\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What is [1,2,3][-1]?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "Error"
+   ],
+   "answer": 2,
+   "explanation": "-1 is the last item."
+  },
+  {
+   "question": "Which adds an item to the end?",
+   "options": [
+    "add()",
+    "append()",
+    "push()",
+    "insert_end()"
+   ],
+   "answer": 1,
+   "explanation": "append() adds at the end."
+  },
+  {
+   "question": "What is [n*2 for n in range(3)]?",
+   "options": [
+    "[0, 2, 4]",
+    "[2, 4, 6]",
+    "[0, 1, 2]",
+    "[1, 2, 3]"
+   ],
+   "answer": 0,
+   "explanation": "range(3) is 0,1,2."
+  },
+  {
+   "question": "What does nums[:2] return for [7,8,9]?",
+   "options": [
+    "[7, 8]",
+    "[8, 9]",
+    "[7]",
+    "[7, 8, 9]"
+   ],
+   "answer": 0,
+   "explanation": "The slice stops before index 2."
+  }
+ ]
+}

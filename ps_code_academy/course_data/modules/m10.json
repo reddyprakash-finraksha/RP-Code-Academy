@@ -1,0 +1,236 @@
+{
+ "id": "m10",
+ "number": 10,
+ "title": "Dictionaries",
+ "summary": "Store data as key-value pairs.",
+ "lessons": [
+  {
+   "id": "m10-l1",
+   "title": "Dictionary Basics",
+   "exercises": [
+    {
+     "id": "m10-l1-e1",
+     "title": "Read a Value",
+     "prompt": "For `student = {\"name\": \"Asha\", \"age\": 15}` print the name.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "student[\"name\"]"
+     ],
+     "solution": "student = {\"name\": \"Asha\", \"age\": 15}\nprint(student[\"name\"])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Asha\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l1-e2",
+     "title": "Add a Key",
+     "prompt": "Start with `d = {\"a\": 1}`, add `\"b\": 2`, and print the dictionary.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "d[\"b\"] = 2"
+     ],
+     "solution": "d = {\"a\": 1}\nd[\"b\"] = 2\nprint(d)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{'a': 1, 'b': 2}\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l1-e3",
+     "title": "Update a Value",
+     "prompt": "Start with `price = {\"apple\": 40}`, set apple to `50`, and print the dictionary.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Assign to an existing key."
+     ],
+     "solution": "price = {\"apple\": 40}\nprice[\"apple\"] = 50\nprint(price)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{'apple': 50}\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m10-l2",
+   "title": "Looping over Dictionaries",
+   "exercises": [
+    {
+     "id": "m10-l2-e1",
+     "title": "Safe Lookup",
+     "prompt": "For `d = {\"a\": 1}` print `d.get(\"z\", \"missing\")`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".get(key, default)"
+     ],
+     "solution": "d = {\"a\": 1}\nprint(d.get(\"z\", \"missing\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "missing\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l2-e2",
+     "title": "Print Pairs",
+     "prompt": "For `d = {\"a\": 1, \"b\": 2}` print each pair as `a: 1` on its own line.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Loop over d.items()."
+     ],
+     "solution": "d = {\"a\": 1, \"b\": 2}\nfor k, v in d.items():\n    print(f\"{k}: {v}\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "a: 1\nb: 2\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l2-e3",
+     "title": "Sum Values",
+     "prompt": "Print the sum of the values in `{\"x\": 10, \"y\": 20, \"z\": 5}`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "sum(d.values())"
+     ],
+     "solution": "print(sum({\"x\": 10, \"y\": 20, \"z\": 5}.values()))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "35\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m10-l3",
+   "title": "Dictionaries in Practice",
+   "exercises": [
+    {
+     "id": "m10-l3-e1",
+     "title": "Count Letters",
+     "prompt": "Count the letters of `\"hello\"` into a dictionary and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "counts.get(ch, 0) + 1"
+     ],
+     "solution": "counts = {}\nfor ch in \"hello\":\n    counts[ch] = counts.get(ch, 0) + 1\nprint(counts)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l3-e2",
+     "title": "Word Frequency",
+     "prompt": "Read one line of text. Print each distinct word and its count as `word: n`, one per line, in alphabetical order.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Loop over sorted(counts)."
+     ],
+     "solution": "words = input().split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nfor w in sorted(counts):\n    print(f\"{w}: {counts[w]}\")\n",
+     "tests": [
+      {
+       "input": "the cat and the dog\n",
+       "expected": "and: 1\ncat: 1\ndog: 1\nthe: 2\n"
+      },
+      {
+       "input": "a a a\n",
+       "expected": "a: 3\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l3-e3",
+     "title": "Swap Keys and Values",
+     "prompt": "Invert `{\"a\": 1, \"b\": 2}` so values become keys, and print the result.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use a dict comprehension."
+     ],
+     "solution": "d = {\"a\": 1, \"b\": 2}\nprint({v: k for k, v in d.items()})\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{1: 'a', 2: 'b'}\n"
+      }
+     ]
+    },
+    {
+     "id": "m10-l3-e4",
+     "title": "Squares Dictionary",
+     "prompt": "Use a dict comprehension to print `{1: 1, 2: 4, 3: 9}`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "{n: n * n for n in range(1, 4)}"
+     ],
+     "solution": "print({n: n * n for n in range(1, 4)})\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "{1: 1, 2: 4, 3: 9}\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "How do you read a value safely with a default?",
+   "options": [
+    "d[key]",
+    "d.get(key, default)",
+    "d.read(key)",
+    "d.find(key)"
+   ],
+   "answer": 1,
+   "explanation": "get() avoids a KeyError."
+  },
+  {
+   "question": "What does d.items() give?",
+   "options": [
+    "Only keys",
+    "Only values",
+    "Key-value pairs",
+    "The length"
+   ],
+   "answer": 2,
+   "explanation": "items() yields (key, value) pairs."
+  },
+  {
+   "question": "What error occurs for a missing key with d['x']?",
+   "options": [
+    "IndexError",
+    "KeyError",
+    "ValueError",
+    "TypeError"
+   ],
+   "answer": 1,
+   "explanation": "Missing dictionary keys raise KeyError."
+  },
+  {
+   "question": "What is {1: 'a'}[1]?",
+   "options": [
+    "1",
+    "'a'",
+    "Error",
+    "None"
+   ],
+   "answer": 1,
+   "explanation": "The value for key 1."
+  }
+ ]
+}

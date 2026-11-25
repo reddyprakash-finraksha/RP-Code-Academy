@@ -1,0 +1,340 @@
+{
+ "id": "m06",
+ "number": 6,
+ "title": "Conditionals",
+ "summary": "Make decisions with if, elif and else.",
+ "lessons": [
+  {
+   "id": "m06-l1",
+   "title": "if and else",
+   "exercises": [
+    {
+     "id": "m06-l1-e1",
+     "title": "Even or Odd",
+     "prompt": "Read an integer. Print `Even` or `Odd`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "n % 2 == 0 means even."
+     ],
+     "solution": "n = int(input())\nif n % 2 == 0:\n    print(\"Even\")\nelse:\n    print(\"Odd\")\n",
+     "tests": [
+      {
+       "input": "4\n",
+       "expected": "Even\n"
+      },
+      {
+       "input": "7\n",
+       "expected": "Odd\n"
+      },
+      {
+       "input": "0\n",
+       "expected": "Even\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l1-e2",
+     "title": "Adult or Minor",
+     "prompt": "Read an age. Print `Adult` if 18 or more, otherwise `Minor`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use >=."
+     ],
+     "solution": "age = int(input())\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")\n",
+     "tests": [
+      {
+       "input": "18\n",
+       "expected": "Adult\n"
+      },
+      {
+       "input": "17\n",
+       "expected": "Minor\n"
+      },
+      {
+       "input": "40\n",
+       "expected": "Adult\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l1-e3",
+     "title": "Sign",
+     "prompt": "Read an integer. Print `Positive`, `Negative` or `Zero`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "You need if, elif and else."
+     ],
+     "solution": "n = int(input())\nif n > 0:\n    print(\"Positive\")\nelif n < 0:\n    print(\"Negative\")\nelse:\n    print(\"Zero\")\n",
+     "tests": [
+      {
+       "input": "5\n",
+       "expected": "Positive\n"
+      },
+      {
+       "input": "-2\n",
+       "expected": "Negative\n"
+      },
+      {
+       "input": "0\n",
+       "expected": "Zero\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m06-l2",
+   "title": "elif Chains",
+   "exercises": [
+    {
+     "id": "m06-l2-e1",
+     "title": "Grade",
+     "prompt": "Read a score. Print `A` (90+), `B` (80-89), `C` (70-79) or `F` (below 70).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Check the highest grade first."
+     ],
+     "solution": "score = int(input())\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")\n",
+     "tests": [
+      {
+       "input": "95\n",
+       "expected": "A\n"
+      },
+      {
+       "input": "85\n",
+       "expected": "B\n"
+      },
+      {
+       "input": "72\n",
+       "expected": "C\n"
+      },
+      {
+       "input": "40\n",
+       "expected": "F\n"
+      },
+      {
+       "input": "90\n",
+       "expected": "A\n"
+      },
+      {
+       "input": "80\n",
+       "expected": "B\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l2-e2",
+     "title": "Largest of Three",
+     "prompt": "Read three integers (one per line). Print the largest.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "You may also use max()."
+     ],
+     "solution": "a = int(input())\nb = int(input())\nc = int(input())\nif a >= b and a >= c:\n    print(a)\nelif b >= c:\n    print(b)\nelse:\n    print(c)\n",
+     "tests": [
+      {
+       "input": "1\n2\n3\n",
+       "expected": "3\n"
+      },
+      {
+       "input": "9\n4\n6\n",
+       "expected": "9\n"
+      },
+      {
+       "input": "5\n5\n2\n",
+       "expected": "5\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l2-e3",
+     "title": "Leap Year",
+     "prompt": "Read a year. Print `Leap` if divisible by 4 and (not divisible by 100 or divisible by 400), else `Not leap`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Combine conditions with and / or."
+     ],
+     "solution": "y = int(input())\nif y % 4 == 0 and (y % 100 != 0 or y % 400 == 0):\n    print(\"Leap\")\nelse:\n    print(\"Not leap\")\n",
+     "tests": [
+      {
+       "input": "2024\n",
+       "expected": "Leap\n"
+      },
+      {
+       "input": "1900\n",
+       "expected": "Not leap\n"
+      },
+      {
+       "input": "2000\n",
+       "expected": "Leap\n"
+      },
+      {
+       "input": "2023\n",
+       "expected": "Not leap\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m06-l3",
+   "title": "Logic: and, or, not",
+   "exercises": [
+    {
+     "id": "m06-l3-e1",
+     "title": "In Range",
+     "prompt": "Read an integer. Print `In range` if it is between 10 and 20 (inclusive), else `Out of range`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "10 <= n <= 20"
+     ],
+     "solution": "n = int(input())\nif 10 <= n <= 20:\n    print(\"In range\")\nelse:\n    print(\"Out of range\")\n",
+     "tests": [
+      {
+       "input": "10\n",
+       "expected": "In range\n"
+      },
+      {
+       "input": "20\n",
+       "expected": "In range\n"
+      },
+      {
+       "input": "9\n",
+       "expected": "Out of range\n"
+      },
+      {
+       "input": "15\n",
+       "expected": "In range\n"
+      },
+      {
+       "input": "21\n",
+       "expected": "Out of range\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l3-e2",
+     "title": "Login",
+     "prompt": "Read a username, then a password. Print `Welcome` if the username is `admin` and the password is `python123`, otherwise `Denied`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use and."
+     ],
+     "solution": "u = input()\np = input()\nif u == \"admin\" and p == \"python123\":\n    print(\"Welcome\")\nelse:\n    print(\"Denied\")\n",
+     "tests": [
+      {
+       "input": "admin\npython123\n",
+       "expected": "Welcome\n"
+      },
+      {
+       "input": "admin\nwrong\n",
+       "expected": "Denied\n"
+      },
+      {
+       "input": "bob\npython123\n",
+       "expected": "Denied\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l3-e3",
+     "title": "FizzBuzz Once",
+     "prompt": "Read an integer n. Print `FizzBuzz` if divisible by 3 and 5, `Fizz` if by 3, `Buzz` if by 5, otherwise n.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Check 15 first."
+     ],
+     "solution": "n = int(input())\nif n % 15 == 0:\n    print(\"FizzBuzz\")\nelif n % 3 == 0:\n    print(\"Fizz\")\nelif n % 5 == 0:\n    print(\"Buzz\")\nelse:\n    print(n)\n",
+     "tests": [
+      {
+       "input": "3\n",
+       "expected": "Fizz\n"
+      },
+      {
+       "input": "5\n",
+       "expected": "Buzz\n"
+      },
+      {
+       "input": "15\n",
+       "expected": "FizzBuzz\n"
+      },
+      {
+       "input": "7\n",
+       "expected": "7\n"
+      }
+     ]
+    },
+    {
+     "id": "m06-l3-e4",
+     "title": "Valid Triangle",
+     "prompt": "Read three side lengths (integers, one per line). Print `Valid` if the sum of any two sides is greater than the third, else `Invalid`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "All three conditions must be true."
+     ],
+     "solution": "a = int(input())\nb = int(input())\nc = int(input())\nif a + b > c and a + c > b and b + c > a:\n    print(\"Valid\")\nelse:\n    print(\"Invalid\")\n",
+     "tests": [
+      {
+       "input": "3\n4\n5\n",
+       "expected": "Valid\n"
+      },
+      {
+       "input": "1\n2\n3\n",
+       "expected": "Invalid\n"
+      },
+      {
+       "input": "5\n5\n5\n",
+       "expected": "Valid\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which operator checks equality?",
+   "options": [
+    "=",
+    "==",
+    "!=",
+    "=>"
+   ],
+   "answer": 1,
+   "explanation": "== compares; = assigns."
+  },
+  {
+   "question": "What prints? x=5; if x>3: print('A') elif x>1: print('B')",
+   "options": [
+    "A",
+    "B",
+    "A and B",
+    "Nothing"
+   ],
+   "answer": 0,
+   "explanation": "Only the first true branch runs."
+  },
+  {
+   "question": "What is not (True and False)?",
+   "options": [
+    "True",
+    "False",
+    "None",
+    "Error"
+   ],
+   "answer": 0,
+   "explanation": "True and False is False; not flips it."
+  },
+  {
+   "question": "Which is the correct range check?",
+   "options": [
+    "10 <= n <= 20",
+    "10 <= n >= 20",
+    "n = 10..20",
+    "n in 10-20"
+   ],
+   "answer": 0,
+   "explanation": "Chained comparison."
+  }
+ ]
+}

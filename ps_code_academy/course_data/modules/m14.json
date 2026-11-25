@@ -1,0 +1,244 @@
+{
+ "id": "m14",
+ "number": 14,
+ "title": "Error Handling",
+ "summary": "Handle problems gracefully with try and except.",
+ "lessons": [
+  {
+   "id": "m14-l1",
+   "title": "try and except",
+   "exercises": [
+    {
+     "id": "m14-l1-e1",
+     "title": "Bad Number",
+     "prompt": "Convert `\"abc\"` with `int()` inside try/except. On `ValueError` print `Invalid number`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "except ValueError:"
+     ],
+     "solution": "try:\n    int(\"abc\")\nexcept ValueError:\n    print(\"Invalid number\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Invalid number\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l1-e2",
+     "title": "Divide by Zero",
+     "prompt": "Compute `10 / 0` inside try/except. On `ZeroDivisionError` print `Cannot divide by zero`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "except ZeroDivisionError:"
+     ],
+     "solution": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Cannot divide by zero\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l1-e3",
+     "title": "Safe Double",
+     "prompt": "Read one line. If it is an integer print double it, otherwise print `Not a number`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Put int(text) inside try."
+     ],
+     "solution": "text = input()\ntry:\n    print(int(text) * 2)\nexcept ValueError:\n    print(\"Not a number\")\n",
+     "tests": [
+      {
+       "input": "12\n",
+       "expected": "24\n"
+      },
+      {
+       "input": "abc\n",
+       "expected": "Not a number\n"
+      },
+      {
+       "input": "-5\n",
+       "expected": "-10\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m14-l2",
+   "title": "else, finally and Other Errors",
+   "exercises": [
+    {
+     "id": "m14-l2-e1",
+     "title": "else and finally",
+     "prompt": "Convert `\"5\"` in a try block. Use `else` to print `OK` and `finally` to print `Done`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Order: try, except, else, finally."
+     ],
+     "solution": "try:\n    int(\"5\")\nexcept ValueError:\n    print(\"bad\")\nelse:\n    print(\"OK\")\nfinally:\n    print(\"Done\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "OK\nDone\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l2-e2",
+     "title": "Index Error",
+     "prompt": "With `nums = [1, 2, 3]`, try to read `nums[10]`. On `IndexError` print `Out of range`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "except IndexError:"
+     ],
+     "solution": "nums = [1, 2, 3]\ntry:\n    print(nums[10])\nexcept IndexError:\n    print(\"Out of range\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Out of range\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l2-e3",
+     "title": "Key Error",
+     "prompt": "With `d = {\"a\": 1}`, try to read `d[\"b\"]`. On `KeyError` print `No such key`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "except KeyError:"
+     ],
+     "solution": "d = {\"a\": 1}\ntry:\n    print(d[\"b\"])\nexcept KeyError:\n    print(\"No such key\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "No such key\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m14-l3",
+   "title": "Raising and Custom Errors",
+   "exercises": [
+    {
+     "id": "m14-l3-e1",
+     "title": "Raise ValueError",
+     "prompt": "Define `check_age(age)` that raises `ValueError(\"Age cannot be negative\")` when age < 0. Call it with `-5` inside try/except and print the error message.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "except ValueError as e: print(e)"
+     ],
+     "solution": "def check_age(age):\n    if age < 0:\n        raise ValueError(\"Age cannot be negative\")\n\ntry:\n    check_age(-5)\nexcept ValueError as e:\n    print(e)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Age cannot be negative\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l3-e2",
+     "title": "Custom Exception",
+     "prompt": "Create `class InsufficientFunds(Exception)`. Raise it with the message `Not enough money` and catch it, printing the message.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "A custom exception inherits from Exception."
+     ],
+     "solution": "class InsufficientFunds(Exception):\n    pass\n\ntry:\n    raise InsufficientFunds(\"Not enough money\")\nexcept InsufficientFunds as e:\n    print(e)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Not enough money\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l3-e3",
+     "title": "safe_divide",
+     "prompt": "Define `safe_divide(a, b)` that returns `None` when b is 0, else a / b. Print `safe_divide(8, 2)` and `safe_divide(1, 0)` on one line separated by a space.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Catch ZeroDivisionError and return None."
+     ],
+     "solution": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n\nprint(safe_divide(8, 2), safe_divide(1, 0))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "4.0 None\n"
+      }
+     ]
+    },
+    {
+     "id": "m14-l3-e4",
+     "title": "Retry Until Valid",
+     "prompt": "Read lines until one is a valid integer. Print `Got <number>` for the first valid one.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use while True with try/except and break."
+     ],
+     "solution": "while True:\n    text = input()\n    try:\n        n = int(text)\n        break\n    except ValueError:\n        continue\nprint(f\"Got {n}\")\n",
+     "tests": [
+      {
+       "input": "x\ny\n7\n",
+       "expected": "Got 7\n"
+      },
+      {
+       "input": "42\n",
+       "expected": "Got 42\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which block runs only if no error happened?",
+   "options": [
+    "except",
+    "else",
+    "finally",
+    "raise"
+   ],
+   "answer": 1,
+   "explanation": "else runs when try succeeded."
+  },
+  {
+   "question": "What does int('abc') raise?",
+   "options": [
+    "TypeError",
+    "ValueError",
+    "KeyError",
+    "IndexError"
+   ],
+   "answer": 1,
+   "explanation": "The text is not a valid number."
+  },
+  {
+   "question": "Which keyword signals an error yourself?",
+   "options": [
+    "throw",
+    "raise",
+    "error",
+    "except"
+   ],
+   "answer": 1,
+   "explanation": "raise creates an exception."
+  },
+  {
+   "question": "Which block always runs?",
+   "options": [
+    "try",
+    "except",
+    "else",
+    "finally"
+   ],
+   "answer": 3,
+   "explanation": "finally runs no matter what."
+  }
+ ]
+}

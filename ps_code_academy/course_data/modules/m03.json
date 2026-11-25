@@ -1,0 +1,233 @@
+{
+ "id": "m03",
+ "number": 3,
+ "title": "Numbers and Math",
+ "summary": "Arithmetic, order of operations and handy math functions.",
+ "lessons": [
+  {
+   "id": "m03-l1",
+   "title": "Arithmetic Operators",
+   "exercises": [
+    {
+     "id": "m03-l1-e1",
+     "title": "Multiply",
+     "prompt": "Print `12 * 8`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use *."
+     ],
+     "solution": "print(12 * 8)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "96\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l1-e2",
+     "title": "Divide and Remainder",
+     "prompt": "Print `17 // 5` on one line and `17 % 5` on the next.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "// gives the whole part, % the remainder."
+     ],
+     "solution": "print(17 // 5)\nprint(17 % 5)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "3\n2\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l1-e3",
+     "title": "Power",
+     "prompt": "Print 2 to the power of 10.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use **."
+     ],
+     "solution": "print(2 ** 10)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "1024\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m03-l2",
+   "title": "Order of Operations",
+   "exercises": [
+    {
+     "id": "m03-l2-e1",
+     "title": "BODMAS",
+     "prompt": "Print the value of `(5 + 3) * 2 - 4 / 2`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Copy the expression into print()."
+     ],
+     "solution": "print((5 + 3) * 2 - 4 / 2)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "14.0\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l2-e2",
+     "title": "Shortcut Operators",
+     "prompt": "Set `x = 10`, then `x += 5`, then `x *= 2`, then print `x`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "x += 5 adds 5 to x."
+     ],
+     "solution": "x = 10\nx += 5\nx *= 2\nprint(x)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "30\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l2-e3",
+     "title": "Average",
+     "prompt": "Print the average of `80`, `90` and `100`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Add in brackets, then divide by 3."
+     ],
+     "solution": "print((80 + 90 + 100) / 3)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "90.0\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m03-l3",
+   "title": "Math Functions",
+   "exercises": [
+    {
+     "id": "m03-l3-e1",
+     "title": "Round",
+     "prompt": "Print `3.14159` rounded to 2 decimals.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "round(number, digits)"
+     ],
+     "solution": "print(round(3.14159, 2))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "3.14\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l3-e2",
+     "title": "Absolute Value",
+     "prompt": "Print the absolute value of `-17`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "abs()"
+     ],
+     "solution": "print(abs(-17))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "17\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l3-e3",
+     "title": "Square Root",
+     "prompt": "Use the math module to print the square root of `144`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "import math first."
+     ],
+     "solution": "import math\nprint(math.sqrt(144))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "12.0\n"
+      }
+     ]
+    },
+    {
+     "id": "m03-l3-e4",
+     "title": "Circle Area",
+     "prompt": "Radius is `5`. Print the area (pi * r squared) rounded to 2 decimals.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "math.pi * r ** 2",
+      "Round at the end."
+     ],
+     "solution": "import math\nr = 5\nprint(round(math.pi * r ** 2, 2))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "78.54\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What is 17 // 5?",
+   "options": [
+    "3",
+    "3.4",
+    "2",
+    "4"
+   ],
+   "answer": 0,
+   "explanation": "Floor division drops the decimal."
+  },
+  {
+   "question": "What is 2 + 3 * 4?",
+   "options": [
+    "20",
+    "14",
+    "24",
+    "9"
+   ],
+   "answer": 1,
+   "explanation": "Multiplication comes before addition."
+  },
+  {
+   "question": "What does x += 3 do?",
+   "options": [
+    "Sets x to 3",
+    "Adds 3 to x",
+    "Multiplies x by 3",
+    "Compares x to 3"
+   ],
+   "answer": 1,
+   "explanation": "x += 3 is x = x + 3."
+  },
+  {
+   "question": "Which line gives 4.0?",
+   "options": [
+    "math.sqrt(16)",
+    "16 // 4",
+    "round(4)",
+    "abs(4)"
+   ],
+   "answer": 0,
+   "explanation": "sqrt returns a float."
+  }
+ ]
+}

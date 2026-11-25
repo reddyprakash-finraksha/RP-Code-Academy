@@ -1,0 +1,21 @@
+name: Build Windows installer
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Build (tests + PyInstaller + verify + Inno Setup)
+        shell: cmd
+        run: packaging\build_windows.bat
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RPCodeAcademy-Setup
+          path: dist/RPCodeAcademy-Setup-*.exe

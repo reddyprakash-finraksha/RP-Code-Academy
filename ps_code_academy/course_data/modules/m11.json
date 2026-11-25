@@ -1,0 +1,245 @@
+{
+ "id": "m11",
+ "number": 11,
+ "title": "Functions",
+ "summary": "Package reusable code with def, parameters and return values.",
+ "lessons": [
+  {
+   "id": "m11-l1",
+   "title": "Defining Functions",
+   "exercises": [
+    {
+     "id": "m11-l1-e1",
+     "title": "Say Hello",
+     "prompt": "Define a function `greet()` that prints `Hello!`, then call it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "def greet():",
+      "Indent the body, then call greet()."
+     ],
+     "solution": "def greet():\n    print(\"Hello!\")\n\ngreet()\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Hello!\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l1-e2",
+     "title": "Add Function",
+     "prompt": "Define `add(a, b)` that returns the sum. Print `add(3, 4)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use return."
+     ],
+     "solution": "def add(a, b):\n    return a + b\n\nprint(add(3, 4))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "7\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l1-e3",
+     "title": "Square Function",
+     "prompt": "Define `square(n)` that returns n squared. Print `square(9)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "return n * n"
+     ],
+     "solution": "def square(n):\n    return n * n\n\nprint(square(9))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "81\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m11-l2",
+   "title": "Parameters and Return Values",
+   "exercises": [
+    {
+     "id": "m11-l2-e1",
+     "title": "Default Parameter",
+     "prompt": "Define `greet(name=\"friend\")` returning `Hello, <name>!`. Print `greet()` then `greet(\"Asha\")`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Give name a default value."
+     ],
+     "solution": "def greet(name=\"friend\"):\n    return \"Hello, \" + name + \"!\"\n\nprint(greet())\nprint(greet(\"Asha\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Hello, friend!\nHello, Asha!\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l2-e2",
+     "title": "Min and Max",
+     "prompt": "Define `min_max(items)` returning `(smallest, largest)`. Print `min_max([3, 1, 4, 1, 5])`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Return two values separated by a comma."
+     ],
+     "solution": "def min_max(items):\n    return min(items), max(items)\n\nprint(min_max([3, 1, 4, 1, 5]))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "(1, 5)\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l2-e3",
+     "title": "is_even",
+     "prompt": "Define `is_even(n)` returning True or False. Read an integer and print `is_even(n)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Return the comparison itself."
+     ],
+     "solution": "def is_even(n):\n    return n % 2 == 0\n\nn = int(input())\nprint(is_even(n))\n",
+     "tests": [
+      {
+       "input": "4\n",
+       "expected": "True\n"
+      },
+      {
+       "input": "7\n",
+       "expected": "False\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m11-l3",
+   "title": "Scope, *args and Recursion",
+   "exercises": [
+    {
+     "id": "m11-l3-e1",
+     "title": "Recursive Factorial",
+     "prompt": "Write a recursive `factorial(n)`. Print `factorial(6)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Base case: n <= 1 returns 1."
+     ],
+     "solution": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "720\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l3-e2",
+     "title": "Fibonacci",
+     "prompt": "Write a recursive `fib(n)` where fib(0)=0 and fib(1)=1. Print `fib(10)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "fib(n) = fib(n-1) + fib(n-2)"
+     ],
+     "solution": "def fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\nprint(fib(10))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "55\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l3-e3",
+     "title": "Variable Arguments",
+     "prompt": "Define `total(*nums)` that returns the sum of all arguments. Print `total(1, 2, 3, 4)`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "*nums is a tuple."
+     ],
+     "solution": "def total(*nums):\n    return sum(nums)\n\nprint(total(1, 2, 3, 4))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "10\n"
+      }
+     ]
+    },
+    {
+     "id": "m11-l3-e4",
+     "title": "Count Primes",
+     "prompt": "Write `is_prime(n)`. Read an integer n and print how many primes are between 1 and n (inclusive).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "A prime has no divisors from 2 up to its square root."
+     ],
+     "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\nn = int(input())\nprint(sum(1 for i in range(1, n + 1) if is_prime(i)))\n",
+     "tests": [
+      {
+       "input": "10\n",
+       "expected": "4\n"
+      },
+      {
+       "input": "30\n",
+       "expected": "10\n"
+      },
+      {
+       "input": "1\n",
+       "expected": "0\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which keyword defines a function?",
+   "options": [
+    "func",
+    "def",
+    "function",
+    "define"
+   ],
+   "answer": 1,
+   "explanation": "def starts a function definition."
+  },
+  {
+   "question": "What does a function return if it has no return statement?",
+   "options": [
+    "0",
+    "''",
+    "None",
+    "Error"
+   ],
+   "answer": 2,
+   "explanation": "It returns None."
+  },
+  {
+   "question": "What does *args collect?",
+   "options": [
+    "A dictionary",
+    "Extra positional arguments as a tuple",
+    "A list of strings",
+    "Nothing"
+   ],
+   "answer": 1,
+   "explanation": "args is a tuple."
+  },
+  {
+   "question": "A recursive function needs a...",
+   "options": [
+    "loop",
+    "base case",
+    "global variable",
+    "class"
+   ],
+   "answer": 1,
+   "explanation": "Without a base case it never stops."
+  }
+ ]
+}

@@ -1,0 +1,232 @@
+{
+ "id": "m04",
+ "number": 4,
+ "title": "Strings",
+ "summary": "Work with text: indexing, slicing and string methods.",
+ "lessons": [
+  {
+   "id": "m04-l1",
+   "title": "String Basics",
+   "exercises": [
+    {
+     "id": "m04-l1-e1",
+     "title": "Length",
+     "prompt": "Print the length of `\"RP Code Academy\"`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "len()"
+     ],
+     "solution": "print(len(\"RP Code Academy\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "15\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l1-e2",
+     "title": "Upper Case",
+     "prompt": "Print `\"python\"` in upper case.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".upper()"
+     ],
+     "solution": "print(\"python\".upper())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "PYTHON\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l1-e3",
+     "title": "Repeat",
+     "prompt": "Print `Ha` repeated 3 times with no spaces: `HaHaHa`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use *."
+     ],
+     "solution": "print(\"Ha\" * 3)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "HaHaHa\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m04-l2",
+   "title": "Indexing and Slicing",
+   "exercises": [
+    {
+     "id": "m04-l2-e1",
+     "title": "First and Last",
+     "prompt": "For `\"Python\"`, print the first letter, then the last letter on the next line.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Index 0 and index -1."
+     ],
+     "solution": "w = \"Python\"\nprint(w[0])\nprint(w[-1])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "P\nn\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l2-e2",
+     "title": "Slice",
+     "prompt": "Print the first 7 letters of `\"Programming\"`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "[0:7]"
+     ],
+     "solution": "print(\"Programming\"[0:7])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Program\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l2-e3",
+     "title": "Reverse",
+     "prompt": "Print `\"stressed\"` reversed.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "[::-1]"
+     ],
+     "solution": "print(\"stressed\"[::-1])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "desserts\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m04-l3",
+   "title": "String Methods",
+   "exercises": [
+    {
+     "id": "m04-l3-e1",
+     "title": "Replace",
+     "prompt": "Replace `Java` with `Python` in `\"I like Java\"` and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".replace(old, new)"
+     ],
+     "solution": "print(\"I like Java\".replace(\"Java\", \"Python\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "I like Python\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l3-e2",
+     "title": "Count",
+     "prompt": "Print how many times `a` appears in `\"banana\"`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".count()"
+     ],
+     "solution": "print(\"banana\".count(\"a\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "3\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l3-e3",
+     "title": "Strip",
+     "prompt": "Print `\"  hello  \"` with the spaces removed from both ends.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".strip()"
+     ],
+     "solution": "print(\"  hello  \".strip())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "hello\n"
+      }
+     ]
+    },
+    {
+     "id": "m04-l3-e4",
+     "title": "Split",
+     "prompt": "Print the list made by splitting `\"red,green,blue\"` at the commas.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ".split(\",\")"
+     ],
+     "solution": "print(\"red,green,blue\".split(\",\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "['red', 'green', 'blue']\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What is 'Python'[1]?",
+   "options": [
+    "P",
+    "y",
+    "t",
+    "Error"
+   ],
+   "answer": 1,
+   "explanation": "Index 0 is P, so index 1 is y."
+  },
+  {
+   "question": "What is len('a b')?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "answer": 1,
+   "explanation": "Spaces count."
+  },
+  {
+   "question": "What does 'abc'[::-1] return?",
+   "options": [
+    "abc",
+    "cba",
+    "bca",
+    "Error"
+   ],
+   "answer": 1,
+   "explanation": "A step of -1 reverses."
+  },
+  {
+   "question": "Which method removes spaces from both ends?",
+   "options": [
+    "trim()",
+    "strip()",
+    "clean()",
+    "cut()"
+   ],
+   "answer": 1,
+   "explanation": "strip() does it."
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+RP Code Academy v1.0
+Copyright (c) RP Code Academy. Licensed for classroom use by the purchasing institution.
+Bundled third-party software (Python, Streamlit, pandas, etc.) remains under its own open-source licences.

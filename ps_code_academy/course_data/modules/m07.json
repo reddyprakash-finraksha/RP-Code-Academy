@@ -1,0 +1,253 @@
+{
+ "id": "m07",
+ "number": 7,
+ "title": "Loops",
+ "summary": "Repeat work with for and while loops.",
+ "lessons": [
+  {
+   "id": "m07-l1",
+   "title": "for Loops",
+   "exercises": [
+    {
+     "id": "m07-l1-e1",
+     "title": "Count to Five",
+     "prompt": "Print the numbers 1 to 5, one per line.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "range(1, 6)"
+     ],
+     "solution": "for i in range(1, 6):\n    print(i)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "1\n2\n3\n4\n5\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l1-e2",
+     "title": "Sum to 100",
+     "prompt": "Print the sum of the numbers 1 to 100.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Start total at 0 and add each i."
+     ],
+     "solution": "total = 0\nfor i in range(1, 101):\n    total += i\nprint(total)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "5050\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l1-e3",
+     "title": "Evens on One Line",
+     "prompt": "Print the even numbers from 2 to 20 on ONE line, separated by single spaces.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "range(2, 21, 2)",
+      "print(*list) prints items separated by spaces."
+     ],
+     "solution": "print(*range(2, 21, 2))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "2 4 6 8 10 12 14 16 18 20\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m07-l2",
+   "title": "while Loops",
+   "exercises": [
+    {
+     "id": "m07-l2-e1",
+     "title": "Countdown",
+     "prompt": "Print `5` down to `1` one per line, then `Liftoff!`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Subtract 1 each time."
+     ],
+     "solution": "n = 5\nwhile n > 0:\n    print(n)\n    n -= 1\nprint(\"Liftoff!\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "5\n4\n3\n2\n1\nLiftoff!\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l2-e2",
+     "title": "Factorial",
+     "prompt": "Read an integer n (0 or more). Print n factorial (n!). 0! is 1.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Multiply result by each number from 2 to n."
+     ],
+     "solution": "n = int(input())\nresult = 1\nfor i in range(2, n + 1):\n    result *= i\nprint(result)\n",
+     "tests": [
+      {
+       "input": "5\n",
+       "expected": "120\n"
+      },
+      {
+       "input": "0\n",
+       "expected": "1\n"
+      },
+      {
+       "input": "7\n",
+       "expected": "5040\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l2-e3",
+     "title": "Sum Until Zero",
+     "prompt": "Read integers one per line until `0` is entered. Print the sum of all numbers before the 0.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "while True with break."
+     ],
+     "solution": "total = 0\nwhile True:\n    n = int(input())\n    if n == 0:\n        break\n    total += n\nprint(total)\n",
+     "tests": [
+      {
+       "input": "3\n4\n5\n0\n",
+       "expected": "12\n"
+      },
+      {
+       "input": "0\n",
+       "expected": "0\n"
+      },
+      {
+       "input": "10\n-4\n0\n",
+       "expected": "6\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m07-l3",
+   "title": "break, continue and Nested Loops",
+   "exercises": [
+    {
+     "id": "m07-l3-e1",
+     "title": "First Match",
+     "prompt": "Find and print the first number from 1 to 100 that is divisible by both 6 and 8.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use break after printing."
+     ],
+     "solution": "for i in range(1, 101):\n    if i % 6 == 0 and i % 8 == 0:\n        print(i)\n        break\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "24\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l3-e2",
+     "title": "Skip Multiples of 3",
+     "prompt": "Print the numbers 1 to 10, one per line, but skip multiples of 3.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "continue skips the rest of the loop body."
+     ],
+     "solution": "for i in range(1, 11):\n    if i % 3 == 0:\n        continue\n    print(i)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "1\n2\n4\n5\n7\n8\n10\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l3-e3",
+     "title": "Star Triangle",
+     "prompt": "Print this pattern (4 rows):\n```\n*\n**\n***\n****\n```",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "\"*\" * i"
+     ],
+     "solution": "for i in range(1, 5):\n    print(\"*\" * i)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "*\n**\n***\n****\n"
+      }
+     ]
+    },
+    {
+     "id": "m07-l3-e4",
+     "title": "Times Table",
+     "prompt": "Read an integer n. Print its times table from 1 to 10, one line each, like `7 x 1 = 7`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use an f-string inside a for loop."
+     ],
+     "solution": "n = int(input())\nfor i in range(1, 11):\n    print(f\"{n} x {i} = {n * i}\")\n",
+     "tests": [
+      {
+       "input": "7\n",
+       "expected": "7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70\n"
+      },
+      {
+       "input": "12\n",
+       "expected": "12 x 1 = 12\n12 x 2 = 24\n12 x 3 = 36\n12 x 4 = 48\n12 x 5 = 60\n12 x 6 = 72\n12 x 7 = 84\n12 x 8 = 96\n12 x 9 = 108\n12 x 10 = 120\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What does range(1, 4) produce?",
+   "options": [
+    "1,2,3",
+    "1,2,3,4",
+    "0,1,2,3",
+    "2,3,4"
+   ],
+   "answer": 0,
+   "explanation": "The stop value is excluded."
+  },
+  {
+   "question": "Which keyword exits a loop early?",
+   "options": [
+    "stop",
+    "exit",
+    "break",
+    "continue"
+   ],
+   "answer": 2,
+   "explanation": "break leaves the loop."
+  },
+  {
+   "question": "What does continue do?",
+   "options": [
+    "Ends the loop",
+    "Skips to the next round",
+    "Restarts the program",
+    "Does nothing"
+   ],
+   "answer": 1,
+   "explanation": "It jumps to the next iteration."
+  },
+  {
+   "question": "How many times does 'for i in range(3): print(i)' print?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "0"
+   ],
+   "answer": 1,
+   "explanation": "range(3) gives 0, 1, 2."
+  }
+ ]
+}

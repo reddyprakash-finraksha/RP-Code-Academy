@@ -1,0 +1,262 @@
+{
+ "id": "m05",
+ "number": 5,
+ "title": "Input and Output",
+ "summary": "Read from the keyboard and format your output nicely.",
+ "lessons": [
+  {
+   "id": "m05-l1",
+   "title": "Reading Input",
+   "exercises": [
+    {
+     "id": "m05-l1-e1",
+     "title": "Greeting",
+     "prompt": "Read a name and print `Hello, <name>!`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "name = input()",
+      "Join the pieces with +."
+     ],
+     "solution": "name = input()\nprint(\"Hello, \" + name + \"!\")\n",
+     "tests": [
+      {
+       "input": "Asha\n",
+       "expected": "Hello, Asha!\n"
+      },
+      {
+       "input": "Ravi\n",
+       "expected": "Hello, Ravi!\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l1-e2",
+     "title": "Last, First",
+     "prompt": "Read a first name, then a last name (two lines). Print `<last>, <first>`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Two input() calls."
+     ],
+     "solution": "first = input()\nlast = input()\nprint(last + \", \" + first)\n",
+     "tests": [
+      {
+       "input": "Asha\nRao\n",
+       "expected": "Rao, Asha\n"
+      },
+      {
+       "input": "Ravi\nKumar\n",
+       "expected": "Kumar, Ravi\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l1-e3",
+     "title": "Double It",
+     "prompt": "Read an integer and print it doubled.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Convert with int()."
+     ],
+     "solution": "n = int(input())\nprint(n * 2)\n",
+     "tests": [
+      {
+       "input": "4\n",
+       "expected": "8\n"
+      },
+      {
+       "input": "21\n",
+       "expected": "42\n"
+      },
+      {
+       "input": "-3\n",
+       "expected": "-6\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m05-l2",
+   "title": "f-Strings",
+   "exercises": [
+    {
+     "id": "m05-l2-e1",
+     "title": "Next Year",
+     "prompt": "Read a name, then an age (integer). Print `<name> will be <age+1> next year.`",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "age + 1 inside {}"
+     ],
+     "solution": "name = input()\nage = int(input())\nprint(f\"{name} will be {age + 1} next year.\")\n",
+     "tests": [
+      {
+       "input": "Asha\n15\n",
+       "expected": "Asha will be 16 next year.\n"
+      },
+      {
+       "input": "Ravi\n20\n",
+       "expected": "Ravi will be 21 next year.\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l2-e2",
+     "title": "Price",
+     "prompt": "Set `price = 3.5` and print `Price: Rs 3.50` (two decimals).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ":.2f gives two decimals."
+     ],
+     "solution": "price = 3.5\nprint(f\"Price: Rs {price:.2f}\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Price: Rs 3.50\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l2-e3",
+     "title": "Square",
+     "prompt": "Read an integer n and print `<n> squared is <n squared>`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "n ** 2"
+     ],
+     "solution": "n = int(input())\nprint(f\"{n} squared is {n ** 2}\")\n",
+     "tests": [
+      {
+       "input": "5\n",
+       "expected": "5 squared is 25\n"
+      },
+      {
+       "input": "12\n",
+       "expected": "12 squared is 144\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m05-l3",
+   "title": "Formatting Numbers",
+   "exercises": [
+    {
+     "id": "m05-l3-e1",
+     "title": "Thousands",
+     "prompt": "Print `1234567` with commas: `1,234,567`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ":, in the braces."
+     ],
+     "solution": "print(f\"{1234567:,}\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "1,234,567\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l3-e2",
+     "title": "Percent",
+     "prompt": "Print `0.256` as a percentage with one decimal: `25.6%`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      ":.1%"
+     ],
+     "solution": "print(f\"{0.256:.1%}\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "25.6%\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l3-e3",
+     "title": "Table Header",
+     "prompt": "Print `Name` left-aligned in 10 characters, then `|`, then `Age` right-aligned in 5 characters, using one f-string.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "{'Name':<10}",
+      "{'Age':>5}"
+     ],
+     "solution": "print(f\"{'Name':<10}|{'Age':>5}\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Name      |  Age\n"
+      }
+     ]
+    },
+    {
+     "id": "m05-l3-e4",
+     "title": "Add Two Numbers",
+     "prompt": "Read two integers (one per line) and print `a + b = total`, for example `3 + 4 = 7`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use an f-string with three parts."
+     ],
+     "solution": "a = int(input())\nb = int(input())\nprint(f\"{a} + {b} = {a + b}\")\n",
+     "tests": [
+      {
+       "input": "3\n4\n",
+       "expected": "3 + 4 = 7\n"
+      },
+      {
+       "input": "10\n-2\n",
+       "expected": "10 + -2 = 8\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "What type does input() return?",
+   "options": [
+    "int",
+    "float",
+    "str",
+    "bool"
+   ],
+   "answer": 2,
+   "explanation": "input() always returns a string."
+  },
+  {
+   "question": "What does f'{2+3}' give?",
+   "options": [
+    "2+3",
+    "5",
+    "'5'",
+    "Error"
+   ],
+   "answer": 1,
+   "explanation": "f-strings evaluate expressions."
+  },
+  {
+   "question": "Which prints 3.14 from x = 3.14159?",
+   "options": [
+    "f'{x:.2f}'",
+    "f'{x:2}'",
+    "f'{x:.2}'",
+    "f'{x.2f}'"
+   ],
+   "answer": 0,
+   "explanation": ".2f means two decimals."
+  },
+  {
+   "question": "Which gives 1,000?",
+   "options": [
+    "f'{1000:,}'",
+    "f'{1000,}'",
+    "f'{1000:.}'",
+    "f'{1000:c}'"
+   ],
+   "answer": 0,
+   "explanation": ":, adds thousands separators."
+  }
+ ]
+}

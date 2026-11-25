@@ -1,0 +1,232 @@
+{
+ "id": "m13",
+ "number": 13,
+ "title": "File Handling",
+ "summary": "Read and write text, CSV and JSON files.",
+ "lessons": [
+  {
+   "id": "m13-l1",
+   "title": "Writing Files",
+   "exercises": [
+    {
+     "id": "m13-l1-e1",
+     "title": "Write and Read",
+     "prompt": "Write `Hello file` to `notes.txt`, then read it back and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use mode \"w\" then open again to read."
+     ],
+     "solution": "with open(\"notes.txt\", \"w\") as f:\n    f.write(\"Hello file\")\nwith open(\"notes.txt\") as f:\n    print(f.read())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Hello file\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l1-e2",
+     "title": "Three Lines",
+     "prompt": "Write the lines `1`, `2`, `3` (one per line) to `nums.txt`, then read the whole file and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Put \\n after each number."
+     ],
+     "solution": "with open(\"nums.txt\", \"w\") as f:\n    f.write(\"1\\n2\\n3\\n\")\nwith open(\"nums.txt\") as f:\n    print(f.read())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "1\n2\n3\n\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l1-e3",
+     "title": "Append Mode",
+     "prompt": "Write `A` plus a newline to `log.txt`, append `B` plus a newline, then print the file contents.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Mode \"a\" appends."
+     ],
+     "solution": "with open(\"log.txt\", \"w\") as f:\n    f.write(\"A\\n\")\nwith open(\"log.txt\", \"a\") as f:\n    f.write(\"B\\n\")\nwith open(\"log.txt\") as f:\n    print(f.read())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "A\nB\n\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m13-l2",
+   "title": "Reading Files",
+   "exercises": [
+    {
+     "id": "m13-l2-e1",
+     "title": "Count Lines",
+     "prompt": "Write three lines to `a.txt`, then use `readlines()` to print how many lines it has.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "len(f.readlines())"
+     ],
+     "solution": "with open(\"a.txt\", \"w\") as f:\n    f.write(\"x\\ny\\nz\\n\")\nwith open(\"a.txt\") as f:\n    print(len(f.readlines()))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "3\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l2-e2",
+     "title": "Shout Each Line",
+     "prompt": "Write the lines `red`, `green`, `blue` to `c.txt`. Read it line by line and print each in upper case.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Loop over the file and strip each line."
+     ],
+     "solution": "with open(\"c.txt\", \"w\") as f:\n    f.write(\"red\\ngreen\\nblue\\n\")\nwith open(\"c.txt\") as f:\n    for line in f:\n        print(line.strip().upper())\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "RED\nGREEN\nBLUE\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l2-e3",
+     "title": "Content Length",
+     "prompt": "Write `Python` to `p.txt` using `with`, read it back, and print the length of the text.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "len(f.read())"
+     ],
+     "solution": "with open(\"p.txt\", \"w\") as f:\n    f.write(\"Python\")\nwith open(\"p.txt\") as f:\n    print(len(f.read()))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "6\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m13-l3",
+   "title": "CSV, JSON and Paths",
+   "exercises": [
+    {
+     "id": "m13-l3-e1",
+     "title": "CSV Round Trip",
+     "prompt": "Write the rows `[\"a\", \"b\"]` and `[\"1\", \"2\"]` with `csv.writer`, read them back with `csv.reader`, and print the list of rows.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Open with newline=\"\" for csv."
+     ],
+     "solution": "import csv\nwith open(\"t.csv\", \"w\", newline=\"\") as f:\n    w = csv.writer(f)\n    w.writerow([\"a\", \"b\"])\n    w.writerow([\"1\", \"2\"])\nwith open(\"t.csv\", newline=\"\") as f:\n    print(list(csv.reader(f)))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "[['a', 'b'], ['1', '2']]\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l3-e2",
+     "title": "JSON Round Trip",
+     "prompt": "Save `{\"name\": \"Asha\", \"age\": 15}` to `s.json` with `json.dump`, load it back, and print the name.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "json.dump then json.load."
+     ],
+     "solution": "import json\nwith open(\"s.json\", \"w\") as f:\n    json.dump({\"name\": \"Asha\", \"age\": 15}, f)\nwith open(\"s.json\") as f:\n    data = json.load(f)\nprint(data[\"name\"])\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Asha\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l3-e3",
+     "title": "Sum a File",
+     "prompt": "Write `10`, `20`, `30` (one per line) to `n.txt`, read them back as integers, and print the sum.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "int() ignores the trailing newline."
+     ],
+     "solution": "with open(\"n.txt\", \"w\") as f:\n    f.write(\"10\\n20\\n30\\n\")\nwith open(\"n.txt\") as f:\n    print(sum(int(line) for line in f))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "60\n"
+      }
+     ]
+    },
+    {
+     "id": "m13-l3-e4",
+     "title": "Does It Exist?",
+     "prompt": "Print `os.path.exists(\"missing.txt\")`, then create that file (write `hi`) and print the check again.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "import os"
+     ],
+     "solution": "import os\nprint(os.path.exists(\"missing.txt\"))\nwith open(\"missing.txt\", \"w\") as f:\n    f.write(\"hi\")\nprint(os.path.exists(\"missing.txt\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "False\nTrue\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which mode appends to a file?",
+   "options": [
+    "'r'",
+    "'w'",
+    "'a'",
+    "'x'"
+   ],
+   "answer": 2,
+   "explanation": "'a' appends."
+  },
+  {
+   "question": "Why use 'with open(...)'?",
+   "options": [
+    "It is faster",
+    "It closes the file automatically",
+    "It encrypts the file",
+    "It is required"
+   ],
+   "answer": 1,
+   "explanation": "with closes the file."
+  },
+  {
+   "question": "What does readlines() return?",
+   "options": [
+    "One string",
+    "A list of lines",
+    "A number",
+    "A dictionary"
+   ],
+   "answer": 1,
+   "explanation": "A list with one string per line."
+  },
+  {
+   "question": "Which module saves dictionaries as text?",
+   "options": [
+    "json",
+    "math",
+    "random",
+    "string"
+   ],
+   "answer": 0,
+   "explanation": "json.dump / json.load."
+  }
+ ]
+}

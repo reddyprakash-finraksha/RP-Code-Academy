@@ -1,0 +1,156 @@
+[
+ {
+  "id": "p1",
+  "title": "Number Guessing Game",
+  "brief": "Build a guessing game. The secret number is **42**. Read guesses (one per line) until the player guesses it.",
+  "requirements": [
+   "For a guess below 42 print `Too low`",
+   "For a guess above 42 print `Too high`",
+   "When correct print `Correct! Attempts: N` where N is the number of guesses, then stop reading"
+  ],
+  "starter": "secret = 42\n# Write your game below\n",
+  "solution": "secret = 42\nattempts = 0\nwhile True:\n    guess = int(input())\n    attempts += 1\n    if guess < secret:\n        print(\"Too low\")\n    elif guess > secret:\n        print(\"Too high\")\n    else:\n        print(f\"Correct! Attempts: {attempts}\")\n        break\n",
+  "tests": [
+   {
+    "input": "50\n30\n42\n",
+    "expected": "Too high\nToo low\nCorrect! Attempts: 3\n"
+   },
+   {
+    "input": "42\n",
+    "expected": "Correct! Attempts: 1\n"
+   },
+   {
+    "input": "10\n90\n43\n41\n42\n",
+    "expected": "Too low\nToo high\nToo high\nToo low\nCorrect! Attempts: 5\n"
+   }
+  ],
+  "hints": [
+   "Use a while True loop and break.",
+   "Count the attempts with a variable."
+  ]
+ },
+ {
+  "id": "p2",
+  "title": "Grade Book",
+  "brief": "Read a class's scores and print a summary. The first line is the number of students N, followed by N integer scores (one per line).",
+  "requirements": [
+   "Print `Average: X` with two decimal places",
+   "Print `Highest: H` and `Lowest: L`",
+   "Print `Passed: K` where K is the number of scores of 40 or more"
+  ],
+  "starter": "n = int(input())\n# read the scores here\n",
+  "solution": "n = int(input())\nscores = [int(input()) for _ in range(n)]\nprint(f\"Average: {sum(scores) / n:.2f}\")\nprint(f\"Highest: {max(scores)}\")\nprint(f\"Lowest: {min(scores)}\")\nprint(f\"Passed: {sum(1 for s in scores if s >= 40)}\")\n",
+  "tests": [
+   {
+    "input": "3\n80\n90\n100\n",
+    "expected": "Average: 90.00\nHighest: 100\nLowest: 80\nPassed: 3\n"
+   },
+   {
+    "input": "4\n35\n40\n55\n20\n",
+    "expected": "Average: 37.50\nHighest: 55\nLowest: 20\nPassed: 2\n"
+   },
+   {
+    "input": "1\n77\n",
+    "expected": "Average: 77.00\nHighest: 77\nLowest: 77\nPassed: 1\n"
+   }
+  ],
+  "hints": [
+   "Store the scores in a list.",
+   "sum(), max(), min() and a counting loop help."
+  ]
+ },
+ {
+  "id": "p3",
+  "title": "To-Do List Manager",
+  "brief": "Build a command-driven to-do list. Read commands one per line until `quit`.",
+  "requirements": [
+   "`add <task>` adds a task (the task may contain spaces)",
+   "`done <number>` marks task number (starting at 1) as done",
+   "`list` prints each task as `1. [ ] task` or `1. [x] task`; if there are no tasks print `Empty`",
+   "`quit` ends the program"
+  ],
+  "starter": "tasks = []\n# read commands in a loop\n",
+  "solution": "tasks = []\nwhile True:\n    line = input()\n    if line == \"quit\":\n        break\n    if line.startswith(\"add \"):\n        tasks.append([line[4:], False])\n    elif line.startswith(\"done \"):\n        tasks[int(line[5:]) - 1][1] = True\n    elif line == \"list\":\n        if not tasks:\n            print(\"Empty\")\n        for i, (text, done) in enumerate(tasks, start=1):\n            print(f\"{i}. [{'x' if done else ' '}] {text}\")\n",
+  "tests": [
+   {
+    "input": "list\nquit\n",
+    "expected": "Empty\n"
+   },
+   {
+    "input": "add buy milk\nadd do homework\nlist\nquit\n",
+    "expected": "1. [ ] buy milk\n2. [ ] do homework\n"
+   },
+   {
+    "input": "add a\nadd b\ndone 2\nlist\ndone 1\nlist\nquit\n",
+    "expected": "1. [ ] a\n2. [x] b\n1. [x] a\n2. [x] b\n"
+   }
+  ],
+  "hints": [
+   "Keep tasks as [text, done] pairs in a list.",
+   "line.startswith(\"add \") and slicing give the task text."
+  ]
+ },
+ {
+  "id": "p4",
+  "title": "Text Analyzer",
+  "brief": "Read one line of text and print statistics about it.",
+  "requirements": [
+   "`Characters: N` - all characters including spaces",
+   "`Words: N` - words separated by spaces",
+   "`Vowels: N` - count of a, e, i, o, u (any case)",
+   "`Longest word: W` - the first longest word",
+   "`Most common letter: L` - lower-case letters only; ties go to the alphabetically first letter"
+  ],
+  "starter": "text = input()\n# analyse the text\n",
+  "solution": "text = input()\nwords = text.split()\nletters = [c for c in text.lower() if c.isalpha()]\ncounts = {}\nfor c in letters:\n    counts[c] = counts.get(c, 0) + 1\nbest = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]\nlongest = max(words, key=len)\nprint(f\"Characters: {len(text)}\")\nprint(f\"Words: {len(words)}\")\nprint(f\"Vowels: {sum(1 for c in letters if c in 'aeiou')}\")\nprint(f\"Longest word: {longest}\")\nprint(f\"Most common letter: {best}\")\n",
+  "tests": [
+   {
+    "input": "The quick brown fox\n",
+    "expected": "Characters: 19\nWords: 4\nVowels: 5\nLongest word: quick\nMost common letter: o\n"
+   },
+   {
+    "input": "Hello hello world\n",
+    "expected": "Characters: 17\nWords: 3\nVowels: 5\nLongest word: Hello\nMost common letter: l\n"
+   },
+   {
+    "input": "a bb ccc dd\n",
+    "expected": "Characters: 11\nWords: 4\nVowels: 1\nLongest word: ccc\nMost common letter: c\n"
+   }
+  ],
+  "hints": [
+   "split() gives the words; max(words, key=len) finds the longest.",
+   "Count letters in a dictionary, then pick the highest count (alphabetical on ties)."
+  ]
+ },
+ {
+  "id": "p5",
+  "title": "Bank Account",
+  "brief": "Create a `BankAccount` class and drive it with commands read until `quit`.",
+  "requirements": [
+   "`deposit <amount>` adds money",
+   "`withdraw <amount>` subtracts money, but if the balance is too low print `Insufficient funds` and change nothing",
+   "`balance` prints `Balance: X`",
+   "Start with a balance of 0; use a class with methods"
+  ],
+  "starter": "class BankAccount:\n    pass\n\naccount = BankAccount()\n# read commands in a loop\n",
+  "solution": "class BankAccount:\n    def __init__(self):\n        self.balance = 0\n\n    def deposit(self, amount):\n        self.balance += amount\n\n    def withdraw(self, amount):\n        if amount > self.balance:\n            print(\"Insufficient funds\")\n        else:\n            self.balance -= amount\n\naccount = BankAccount()\nwhile True:\n    cmd = input().split()\n    if cmd[0] == \"quit\":\n        break\n    if cmd[0] == \"deposit\":\n        account.deposit(int(cmd[1]))\n    elif cmd[0] == \"withdraw\":\n        account.withdraw(int(cmd[1]))\n    elif cmd[0] == \"balance\":\n        print(f\"Balance: {account.balance}\")\n",
+  "tests": [
+   {
+    "input": "balance\nquit\n",
+    "expected": "Balance: 0\n"
+   },
+   {
+    "input": "deposit 100\nwithdraw 30\nbalance\nquit\n",
+    "expected": "Balance: 70\n"
+   },
+   {
+    "input": "deposit 50\nwithdraw 80\nbalance\nwithdraw 50\nbalance\nquit\n",
+    "expected": "Insufficient funds\nBalance: 50\nBalance: 0\n"
+   }
+  ],
+  "hints": [
+   "Put the balance check inside withdraw().",
+   "cmd = input().split() splits the command and the amount."
+  ]
+ }
+]

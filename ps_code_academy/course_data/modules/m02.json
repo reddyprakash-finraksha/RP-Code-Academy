@@ -1,0 +1,233 @@
+{
+ "id": "m02",
+ "number": 2,
+ "title": "Variables and Data Types",
+ "summary": "Store values, understand types, and convert between them.",
+ "lessons": [
+  {
+   "id": "m02-l1",
+   "title": "Variables",
+   "exercises": [
+    {
+     "id": "m02-l1-e1",
+     "title": "Store and Print",
+     "prompt": "Create a variable `age` equal to `15` and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Write age = 15 on one line.",
+      "Then print(age)."
+     ],
+     "solution": "age = 15\nprint(age)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "15\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l1-e2",
+     "title": "Swap Values",
+     "prompt": "Start with `a = 1` and `b = 2`. Swap them, then print `a` and `b` on one line separated by a space (expected `2 1`).",
+     "starter": "a = 1\nb = 2\n# swap here\n",
+     "hints": [
+      "You can swap in one line: a, b = b, a."
+     ],
+     "solution": "a = 1\nb = 2\na, b = b, a\nprint(a, b)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "2 1\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l1-e3",
+     "title": "City Variable",
+     "prompt": "Create `city = \"Chennai\"` and print it.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Strings need quotes."
+     ],
+     "solution": "city = \"Chennai\"\nprint(city)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "Chennai\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m02-l2",
+   "title": "Data Types",
+   "exercises": [
+    {
+     "id": "m02-l2-e1",
+     "title": "Type of an Integer",
+     "prompt": "Print the type of `42`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "print(type(...))"
+     ],
+     "solution": "print(type(42))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "<class 'int'>\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l2-e2",
+     "title": "Type of a Float",
+     "prompt": "Print the type of `3.14`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "3.14 has a decimal point."
+     ],
+     "solution": "print(type(3.14))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "<class 'float'>\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l2-e3",
+     "title": "Two Types",
+     "prompt": "Print the type of `\"hi\"` on one line and the type of `True` on the next.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Two print calls."
+     ],
+     "solution": "print(type(\"hi\"))\nprint(type(True))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "<class 'str'>\n<class 'bool'>\n"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "m02-l3",
+   "title": "Type Conversion",
+   "exercises": [
+    {
+     "id": "m02-l3-e1",
+     "title": "String to Int",
+     "prompt": "Convert `\"25\"` to an int, add 5, and print the result (`30`).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "int(\"25\") gives a number."
+     ],
+     "solution": "print(int(\"25\") + 5)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "30\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l3-e2",
+     "title": "Float Maths",
+     "prompt": "Convert `\"3.5\"` to a float, multiply by 2, and print (`7.0`).",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Use float()."
+     ],
+     "solution": "print(float(\"3.5\") * 2)\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "7.0\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l3-e3",
+     "title": "Add a Percent Sign",
+     "prompt": "Convert `100` to a string, add `%`, and print `100%`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "str(100) + \"%\""
+     ],
+     "solution": "print(str(100) + \"%\")\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "100%\n"
+      }
+     ]
+    },
+    {
+     "id": "m02-l3-e4",
+     "title": "Truncate and Truth",
+     "prompt": "Print `int(7.9)` on one line, then `bool(0)` and `bool(\"hi\")` on the next line (separated by a space). Expected: `7` then `False True`.",
+     "starter": "# Write your code below\n",
+     "hints": [
+      "Two print calls; the second has two values."
+     ],
+     "solution": "print(int(7.9))\nprint(bool(0), bool(\"hi\"))\n",
+     "tests": [
+      {
+       "input": "",
+       "expected": "7\nFalse True\n"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "question": "Which is a valid variable name?",
+   "options": [
+    "2nd_place",
+    "my score",
+    "my_score",
+    "my-score"
+   ],
+   "answer": 2,
+   "explanation": "Names use letters, digits and underscores, and cannot start with a digit."
+  },
+  {
+   "question": "What is type(3.0)?",
+   "options": [
+    "int",
+    "float",
+    "str",
+    "bool"
+   ],
+   "answer": 1,
+   "explanation": "Numbers with a decimal point are floats."
+  },
+  {
+   "question": "What does int(7.9) give?",
+   "options": [
+    "8",
+    "7.9",
+    "7",
+    "Error"
+   ],
+   "answer": 2,
+   "explanation": "int() cuts off the decimal part."
+  },
+  {
+   "question": "What is bool('')?",
+   "options": [
+    "True",
+    "False",
+    "Error",
+    "None"
+   ],
+   "answer": 1,
+   "explanation": "An empty string is False."
+  }
+ ]
+}
