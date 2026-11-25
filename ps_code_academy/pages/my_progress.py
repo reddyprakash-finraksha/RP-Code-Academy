@@ -20,5 +20,5 @@ for m in course.modules():
     rows.append({"Module": f"{m['number']}. {m['title']}", "Lessons": f"{pm['lessons_done']}/{pm['lessons_total']}",
                  "Exercises": f"{pm['exercises_done']}/{pm['exercises_total']}", "Progress %": pm["percent"],
                  "Best quiz": "-" if q is None else f"{round(q * 100)}%", "Done": "✅" if pm["complete"] else ""})
-st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True,
+st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch",
              column_config={"Progress %": st.column_config.ProgressColumn("Progress %", min_value=0, max_value=100, format="%d%%")})

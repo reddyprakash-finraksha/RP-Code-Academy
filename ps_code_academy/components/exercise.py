@@ -69,25 +69,25 @@ def render(item: dict, kind: str = "exercise") -> None:
 
     b1, b2, b3, b4, b5 = st.columns(5)
     code = st.session_state[code_key]
-    if b1.button("▶ Run", key=f"run_{iid}", use_container_width=True):
+    if b1.button("▶ Run", key=f"run_{iid}", width="stretch"):
         with st.spinner("Running..."):
             st.session_state[res_key] = ("run", sandbox.run_code(code, stdin=st.session_state.get(stdin_key, "")))
         progress.save_code(iid, code, kind)
-    if b2.button("✅ Check", key=f"chk_{iid}", type="primary", use_container_width=True):
+    if b2.button("✅ Check", key=f"chk_{iid}", type="primary", width="stretch"):
         with st.spinner("Checking against test cases..."):
             res = checker.check(item, code)
         progress.record_attempt(iid, code, res.passed, kind)
         st.session_state[res_key] = ("check", res)
         _toast_new()
     n_hints = len(item["hints"])
-    if b3.button("💡 Hint", key=f"hint_{iid}", use_container_width=True, disabled=n_hints == 0):
+    if b3.button("💡 Hint", key=f"hint_{iid}", width="stretch", disabled=n_hints == 0):
         progress.use_hint(iid, n_hints, kind)
     prog = progress.get_item(iid)
     unlocked = progress.solution_unlocked(iid, n_hints)
-    if b4.button("👀 Solution", key=f"sol_{iid}", use_container_width=True, disabled=not unlocked,
+    if b4.button("👀 Solution", key=f"sol_{iid}", width="stretch", disabled=not unlocked,
                  help=f"Unlocks after {config.SOLUTION_UNLOCK_ATTEMPTS} unsuccessful checks, or after passing."):
         progress.view_solution(iid, kind)
-    b5.button("↺ Reset", key=f"rst_{iid}", use_container_width=True, on_click=_reset, args=(iid, item["starter"]))
+    b5.button("↺ Reset", key=f"rst_{iid}", width="stretch", on_click=_reset, args=(iid, item["starter"]))
 
     prog = progress.get_item(iid)
     if res_key in st.session_state:

@@ -66,7 +66,7 @@ with tab_over:
         for i, p in sorted(stuck, key=lambda x: -x[1]["attempts"]):
             title = course.exercise(i)["title"] if i in {e["id"] for e in course.all_exercises()} else course.project(i)["title"]
             rows.append({"ID": i, "Title": title, "Attempts": p["attempts"], "Hints": p["hints_used"]})
-        st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
     else:
         st.success("Nothing stuck right now.")
     viewed = sum(1 for p in s["prog"].values() if p["solution_viewed"])
@@ -80,7 +80,7 @@ with tab_mod:
         rows.append({"Module": f"{m['number']}. {m['title']}", "Lessons": f"{pm['lessons_done']}/{pm['lessons_total']}",
                      "Exercises": f"{pm['exercises_done']}/{pm['exercises_total']}", "Progress %": pm["percent"],
                      "Best quiz": "-" if q is None else f"{round(q * 100)}%", "Complete": "Yes" if pm["complete"] else "No"})
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True,
+    st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch",
                  column_config={"Progress %": st.column_config.ProgressColumn(min_value=0, max_value=100, format="%d%%")})
 
 with tab_ex:
@@ -94,14 +94,14 @@ with tab_ex:
                          "Status": "Completed" if p.get("completed") else ("Attempted" if p.get("attempts") else "Not started"),
                          "Attempts": p.get("attempts", 0), "Hints": p.get("hints_used", 0),
                          "Solution viewed": "Yes" if p.get("solution_viewed") else "", "Passed on": p.get("first_passed_at") or ""})
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
 
 with tab_rep:
     st.write("CSV files open directly in Excel.")
     c = st.columns(3)
-    c[0].download_button("⬇ Exercises CSV", reports.exercise_report(), "psca_exercises.csv", "text/csv", use_container_width=True)
-    c[1].download_button("⬇ Modules CSV", reports.module_report(), "psca_modules.csv", "text/csv", use_container_width=True)
-    c[2].download_button("⬇ Quizzes CSV", reports.quiz_report(), "psca_quizzes.csv", "text/csv", use_container_width=True)
+    c[0].download_button("⬇ Exercises CSV", reports.exercise_report(), "psca_exercises.csv", "text/csv", width="stretch")
+    c[1].download_button("⬇ Modules CSV", reports.module_report(), "psca_modules.csv", "text/csv", width="stretch")
+    c[2].download_button("⬇ Quizzes CSV", reports.quiz_report(), "psca_quizzes.csv", "text/csv", width="stretch")
     if st.button("Also save copies to the reports folder"):
         paths = reports.save_all()
         st.success(f"Saved {len(paths)} files to: {paths[0].parent}")
