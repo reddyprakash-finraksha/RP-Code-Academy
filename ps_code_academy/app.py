@@ -35,6 +35,7 @@ with st.sidebar:
     pct = progress.stats()["overall_percent"]
     st.progress(pct / 100, text=f"{pct}% complete")
     st.caption(f"v{config.VERSION} · works offline")
+    st.caption("© 2026 Reddyprakash. For learning use only.")
 try:
     nav.run()
 except Exception as exc:  # noqa: BLE001
