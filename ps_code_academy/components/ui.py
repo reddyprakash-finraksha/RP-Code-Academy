@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import streamlit as st
-
 from core import config, db
 
 
@@ -41,9 +40,23 @@ def safe_run(label: str):
     return cm()
 
 
+# def require_student():
+#     """Return the student profile; if missing, show the profile form and stop this page run.
+#     Every page that needs the student calls this, so a missing profile can never crash a page."""
+#     student = db.get_student()
+#     if student is not None:
+#         return student
+#     hero(f"Welcome to {config.APP_NAME}", "Let's set up your profile. This stays on this computer.")
+#     with st.form("profile"):
+#         name = st.text_input("What is your name?", max_chars=60)
+#         if st.form_submit_button("Start learning", type="primary"):
+#             try:
+#                 db.create_student(name)
+#                 st.rerun()
+#             except ValueError as e:
+#                 st.error(str(e))
+#     st.stop()
 def require_student():
-    """Return the student profile; if missing, show the profile form and stop this page run.
-    Every page that needs the student calls this, so a missing profile can never crash a page."""
     student = db.get_student()
     if student is not None:
         return student
