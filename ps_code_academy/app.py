@@ -16,19 +16,7 @@ if "booted" not in st.session_state:
         log.exception("auto backup failed")
 
 ui.inject_css()
-student = db.get_student()
-
-if student is None:
-    ui.hero(f"Welcome to {config.APP_NAME}", "Let's set up your profile. This stays on this computer.")
-    with st.form("profile"):
-        name = st.text_input("What is your name?", max_chars=60)
-        if st.form_submit_button("Start learning", type="primary"):
-            try:
-                db.create_student(name)
-                st.rerun()
-            except ValueError as e:
-                st.error(str(e))
-    st.stop()
+student = ui.require_student()
 
 pages = [
     st.Page("pages/home.py", title="Home", icon="🏠", default=True),

@@ -43,7 +43,7 @@ if st.button("🔒 Lock dashboard"):
     st.rerun()
 
 s = progress.stats()
-stu = db.get_student()
+stu = ui.require_student()
 tab_over, tab_mod, tab_ex, tab_rep, tab_bak, tab_set = st.tabs(
     ["Overview", "Modules", "Exercises", "Reports (CSV)", "Backups", "Settings"])
 

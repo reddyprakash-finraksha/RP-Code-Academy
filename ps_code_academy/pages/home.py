@@ -3,7 +3,7 @@ import streamlit as st
 from components import ui
 from core import achievements, course, db, progress
 
-s = db.get_student()
+s = ui.require_student()
 st_ = progress.stats()
 ui.hero(f"Welcome back, {s['name']}! 🐍", "Learn Python step by step. Everything works offline.")
 
